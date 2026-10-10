@@ -1,0 +1,75 @@
+What is an Operating System?
+
+An Operating System (OS) is the software that sits between you (and your apps) and the hardware. Examples: Windows, Linux, macOS, Android.
+
+Example: a school principal 🏫
+
+Think of the OS as the principal of a school.
+
+Students (apps like Chrome, WhatsApp, games) all want things: classrooms, the playground, the library.
+The school’s resources (CPU, RAM, storage, printer) are limited.
+The principal decides who gets what, when, and for how long, so there is no fighting and everything runs smoothly.
+
+Without a principal, the school would be chaos. Without an OS, every app would fight over the hardware.
+
+What does an OS actually do?
+Job	School example	Computer example
+Process management	Deciding which class uses the playground now	Deciding which app gets the CPU now
+Memory management	Giving each class its own room	Giving each app its own part of RAM
+File management	Library that stores books in an organised way	Folders, files, saving and opening them
+Device management	Controlling the school bell and the printer	Talking to keyboard, mouse, printer, via drivers
+Security	Gate pass, ID cards	Passwords, user permissions
+User interface	Reception desk where you ask for things	Desktop, icons, command line
+Two ways to talk to an OS
+GUI (Graphical User Interface): click icons, windows, buttons (Windows desktop).
+CLI (Command Line Interface): type commands (Linux terminal, ls, cd).
+What is a Kernel?
+
+The kernel is the core, most important part of the OS. It runs from the moment the computer starts, and it directly controls the CPU, memory and devices.
+
+Example: if the OS is the principal’s office, the kernel is the principal’s brain: the part that actually makes the decisions.
+
+Everything else (the desktop, icons, settings app) is just built around it.
+
+User mode vs Kernel mode
+
+The CPU runs in two modes, like two levels of access in school:
+
+	User mode	Kernel mode
+Who runs here	Normal apps (Chrome, Notepad)	The kernel
+Access	Limited, cannot touch hardware directly	Full access to everything
+If something crashes	Only that app crashes	The whole system can crash
+
+Why this split? Imagine any student could open the principal’s cupboard and change the exam papers. That would be dangerous. So students can only ask the principal for things. Apps are treated the same way.
+
+What is a System Call?
+
+Since apps in user mode cannot touch hardware directly, they must ask the kernel politely. This request is called a system call.
+
+Example: you press Save in Notepad.
+
+Notepad (user mode) can’t write to the disk by itself.
+It makes a system call to the kernel: “please write this file”.
+The CPU switches to kernel mode.
+The kernel writes the file to disk.
+The CPU switches back to user mode and returns the result to Notepad.
+
+Common system calls: opening a file, reading, writing, creating a process, allocating memory.
+
+Quick recap
+OS = manager between apps and hardware (like a principal).
+Its main jobs: process, memory, file, device management, security.
+Kernel = the core part of the OS with full hardware control.
+User mode is limited and safe; kernel mode is full-access.
+System call = how an app asks the kernel to do something it can’t do itself.
+Common interview questions
+What is an operating system, and what are its main functions?
+What is a kernel?
+Difference between user mode and kernel mode?
+What is a system call? Give an example.
+Difference between a GUI and a CLI?
+Quick check
+Why can’t Chrome directly write to your hard disk?
+If an app in user mode crashes, does the whole computer crash?
+
+Answers: 1) Apps run in user mode, which has no direct hardware access, so Chrome must make a system call and let the kernel do it. 2) No, only that app crashes. The kernel keeps running.
